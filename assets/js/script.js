@@ -2,7 +2,7 @@ var pageContent = document.querySelector(".page-content");
 // Question Array
 var questions = [
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
-    {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
+    {q: "This is a question 2?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"}
@@ -24,6 +24,7 @@ var startQuiz = function() {
 };
 
 var newQuestion = function(questionNumber) {
+    choiceContainer.innerHTML="";
     currentQuestion=questions[questionNumber];
     answer=currentQuestion.a;
     var choiceList = currentQuestion.c;
@@ -59,12 +60,14 @@ var pickChoice = function() {
     } else {
         console.log("Wrong");
     };
+    
+    questionNumber = questionNumber+1;
+    newQuestion(questionNumber);
 };
 // event listeners
 
 // for loop
-var startQuiz  
 
-newQuestion(0) 
+newQuestion(questionNumber) 
 
 
