@@ -7,20 +7,23 @@ var questions = [
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"},
     {q: "This is a question?", c: ["choice1", "choice2", "choice3", "choice4"], a:"1"}
 ];
-var questionEl = document.querySelector("#question");
-var choiceListEl = document.querySelector("#choice-list");
+var startEl = document.querySelector("#start");
+var questionEl = document.createElement("h2");
 var questionNumber = 0;
 var currentQuestion = "";
-var answer="";
-var choiceContainer="";
+var answer = "";
+var choiceContainer = "";
+var score = 0;
 
 
 
 
 var startQuiz = function() {
-    for (i=0; i< questions.length; i++) {
-        newQuestion();
-    }
+    pageContent.innerHTML="";
+
+    questionEl.classList="question";
+    pageContent.appendChild(questionEl);
+    newQuestion(questionNumber);
 };
 
 var newQuestion = function(questionNumber) {
@@ -57,6 +60,8 @@ var pickChoice = function() {
 
     if (pickedChoiceID[pickedChoiceID.length-1] === answer) {
         console.log("Right");
+        score = score + 1;
+
     } else {
         console.log("Wrong");
     };
@@ -64,10 +69,8 @@ var pickChoice = function() {
     questionNumber = questionNumber+1;
     newQuestion(questionNumber);
 };
-// event listeners
 
-// for loop
-
-newQuestion(questionNumber) 
-
+if(startEl) {
+    startEl.addEventListener("click",startQuiz);
+}
 
