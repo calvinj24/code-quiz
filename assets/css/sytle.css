@@ -32,9 +32,16 @@ header p {
     margin-right: 10px;
 }
 
+.high-score-link {
+    color: var(--primary);
+}
+
+.high-score-link:hover {
+    color: var(--secondary);
+}
 
 .page-content {
-    margin: 50px 10% 0 20%;
+    margin: 50px 10% 0 10%;
     display: flex;
     flex-direction: column;
 }
@@ -49,7 +56,7 @@ header p {
     width: 25%;
 }
 
-.choice {
+.button {
     background-color: var(--primary);
     color: white;
     border: none;
@@ -58,6 +65,10 @@ header p {
     border-radius: 5px;
 }
 
-.choice:hover {
+.button:hover {
     background-color: var(--secondary);
+}
+
+#start {
+    width: 25%; 
 }
